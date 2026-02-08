@@ -8,7 +8,7 @@ function shiftCharacterCode(code, shift){
     for(let range of charRanges){
         if(code >= range.min && code <= range.max){
             let pos = code - range.min;
-            pos  = (pos + shift) % TOTAL_ALPHABETS;
+            pos  = (TOTAL_ALPHABETS + pos + shift) % TOTAL_ALPHABETS;
 
             return range.min + pos;
         }
